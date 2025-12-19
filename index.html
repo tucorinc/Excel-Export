@@ -103,9 +103,26 @@ href='javascript:(function(){function X(n){var s=(n.innerText||n.textContent||""
 </a>
 
     </p>
-
+<div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>Make sure your browser’s <strong>Bookmarks Bar</strong> is visible.</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>Drag the green button you wish to add to the bar.</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>Name the bookmark.</div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div>Open the steps menu of a program and click the bookmark.</div>
+      </div>
+    </div>
         <p>
-<a class="bookmarklet"
+      <a class="bookmarklet"
 href='javascript:(function(){function t(e){var n=e.innerText||e.textContent||"";return n=n.replace(/\u00a0/g," ").replace(/\s+/g," ").trim()}function e(t){try{var e=getComputedStyle(t);if("none"===e.display||"hidden"===e.visibility)return!1}catch{}var n=t.getBoundingClientRect();return n.width>0&&n.height>0}function n(){return(document.title||"").replace(/\s+/g," ").trim()}function r(t){var e=new Date;return e.getMonth()+1+t+e.getDate()+t+e.getFullYear()}function o(t){var e=(n()||"page")+" "+r("-");return e.replace(/[:*?"<>|\\/\[\]]/g,"-").replace(/\s+/g," ").trim()+"."+t}function a(t){return(t=(t||"Sheet").replace(/[\/\*\?:\[\]]/g," ").slice(0,31))||"Sheet"}function i(){for(var t=document.querySelectorAll(".v-data-table table,table"),n=[],r=0;r<t.length;r++)e(t[r])&&n.push(t[r]);return n}function s(e){var n=e.querySelectorAll("thead th,thead td"),r=[];if(n.length){for(var o=0;o<n.length;o++)r.push(t(n[o]));return r}var a=e.querySelector("tr");if(!a)return[];var i=a.querySelectorAll("th,td");for(o=0;o<i.length;o++)r.push(t(i[o]));return r}function l(t){for(var e={id:-1,description:-1,io:-1},n=0;n<t.length;n++){var r=t[n].trim().toLowerCase();e.id<0&&/^(id|#)$/.test(r)?e.id=n:e.description<0&&/^(desc|description)$/.test(r)?e.description=n:e.io<0&&/^(io|i\/o)$/.test(r)&&(e.io=n)}var o=[];return["id","description","io"].forEach(function(t){e[t]>=0&&o.push(e[t])}),o}function c(e,n){var r=s(e),o=r.length?e.querySelectorAll("tbody tr"):e.querySelectorAll("tr"),a=[],i=!n||!n.length,l=0;if(!e.querySelector("thead")&&r.length&&o.length){var c=o[0],u=[],d=c.querySelectorAll("th,td");for(var f=0;f<d.length;f++)u.push(t(d[f]));u.join("|")==r.join("|")&&(l=1)}var h=[];if(i)h=r.slice();else for(f=0;f<n.length;f++)h.push(r[n[f]]||"");for(var p=l;p<o.length;p++){var v=o[p];if(v.querySelector("td,th")){var y=v.querySelectorAll("th,td"),m=[];if(i)for(var g=0;g<y.length;g++)m.push(t(y[g]));else for(var b=0;b<n.length;b++){var w=n[b];m.push(y[w]?t(y[w]):"")}a.push(m)}}return{headers:h,rows:a}}function u(t,e){if(window.XLSX)return t(XLSX);var n=document.createElement("script");n.src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js",n.async=!0,n.onload=function(){t(XLSX)},n.onerror=function(){e(Error("Failed to load XLSX library"))},document.head.appendChild(n)}var d=i();if(!d.length)return alert("No visible HTML tables found.");u(function(t){for(var e=t.utils.book_new(),n=0;n<d.length;n++){var r=s(d[n]),i=c(d[n],l(r)),u=[];i.headers.length&&u.push(i.headers);for(var f=0;f<i.rows.length;f++)u.push(i.rows[f]);var h=t.utils.aoa_to_sheet(u);t.utils.book_append_sheet(e,h,a("Table_"+(n+1)))}t.writeFile(e,o("xlsx"))},function(t){alert("Could not export to XLSX: "+t.message)})})();'>
   Export Station List to Excel
 </a>
@@ -127,12 +144,20 @@ href='javascript:(function(){function t(e){var n=e.innerText||e.textContent||"";
       </div>
       <div class="step">
         <div class="num">4</div>
-        <div>Open the steps menu of a program or station list and click the bookmark.</div>
+        <div>Open the station list under the side bar menu.</div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div>At the bottom of the screen, change <strong>Rows per page</strong> to <strong>All</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="num">6</div>
+        <div>Click the bookmark.</div>
       </div>
     </div>
 
     <div class="note">
-      This tool runs only in your browser. No data is uploaded or shared.
+      <Strong>Note: </Strong>This tool runs only in your browser. No data is uploaded or shared. Once the bookmark is clicked, an Excel file will be generated in your browser's downloads.
     </div>
   </div>
 </div>
