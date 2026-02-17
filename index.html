@@ -20,15 +20,21 @@
     color:var(--text);
     line-height:1.5;
   }
+  footer{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+  }
   .wrap{
     max-width:720px;
     margin:40px auto;
     padding:24px;
+    padding-bottom: 0px;
   }
   .card{
     background:var(--card);
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
     padding:32px;
   }
   h1{
@@ -46,8 +52,21 @@
     text-decoration:none;
     font-weight:600;
     padding:14px 20px;
-    border-radius:10px;
+    border-radius:5px;
     cursor:grab;
+    user-select:none;
+  }
+  .button{
+    display:inline-block;
+    background:transparent;
+    color:var(--brand);
+    border-color:var(--brand);
+    border-style: solid;
+    text-decoration:none;
+    font-weight:600;
+    padding:14px 20px;
+    border-radius:5px;
+    cursor:select;
     user-select:none;
   }
   .bookmarklet:active{cursor:grabbing}
@@ -200,7 +219,7 @@
         For more information on error codes, visit our NLP Support Portal.
       </div>
       <br>
-      <div><a class="bookmarklet"
+      <div><a class="button"
         href="https://nlpsupport.tucor.com/en/support/solutions/articles/4000207438-nlp-error-codes-common">
         Support Portal
       </a></div>
@@ -213,4 +232,28 @@
 </div>
 
 </body>
+<footer>
+  <div class="wrap" align="middle">
+    <h1>
+      <u>Contact Us</u>
+    </h1>
+    <table>
+      <tr>
+        <td width="40%" valign="top" align="middle">
+          <h3>
+            Email: <a href ="mailto:support@tucor.com?subject=Excel%20Export%20Help">support@tucor.com</a>
+          </h3>
+        </td>
+        <td width="20%">
+
+        </td>
+        <td width="40%" valign="top" align="middle">
+          <h3>
+            Phone: 724-935-6850
+          </h3>
+        </td>
+      </tr>
+    </table>
+  </div>
+</footer>
 </html>
